@@ -1,0 +1,137 @@
+@import 'mixins/mixins.scss';
+
+.show-preview-card {
+  margin: 30px 16px;
+  background-color: var(--color-primary-500);
+  width: 100%;
+  height: 100%;
+  max-width: 413px;
+  max-height: 607px;
+  border-radius: 24px;
+  padding: 16px;
+  color: white;
+
+  & &__image-container {
+    position: relative;
+    border-radius: 16px;
+    width: 100%;
+    height: 381px;
+    overflow: hidden;
+    @include image-position;
+  }
+
+  & &__content {
+    margin-top: 6px;
+    padding: 16px;
+  }
+
+  & &__title {
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 100%;
+    letter-spacing: -0.03em;
+  }
+
+  & &__name-and-time {
+    margin-top: 13px;
+    display: flex;
+    gap: 180px;
+    line-height: 140%;
+    color: var(--color-primary-200);
+    padding-bottom: 22px;
+    border-bottom: 1.5px solid var(--color-primary-400);
+  }
+  & &__name {
+    // width: 99px;
+    white-space: nowrap;
+    height: 22px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22.4px;
+    letter-spacing: -0.02em;
+    color: var(--color-primary-200);
+  }
+
+  & &__time {
+    display: flex;
+    align-self: center;
+    white-space: nowrap;
+    gap: 8px;
+  }
+  //   &__time-text {
+  //         width: 50px;
+  //         height: 16px;
+  //         font-size: 1rem;
+  //         line-height: 100%;
+  //         font-weight: 400;
+  //         font-style: normal;
+  //         letter-spacing: -2%;
+  //     color: var(--color-primary-200);
+  //         padding: 2px 0px 2px 28px;
+  //   }
+
+  & &__time-icon-container {
+    width: 20px;
+    height: 20px;
+  }
+
+  & &__show-cover-and-info {
+    display: flex;
+    gap: 16px;
+    padding-top: 31px;
+  }
+  & &__show-cover-container {
+    height: 40px;
+    width: 40px;
+    img {
+      border-radius: 90px;
+    }
+  }
+  & &__show-info-container {
+    display: flex;
+    align-self: center;
+    gap: 11px;
+  }
+
+  & &__show-info-dot-spacer {
+    @include spacer;
+  }
+  & &__show-info-text {
+    @include info-fonts;
+    color: var(--color-primary-200);
+  }
+  @media (max-width: 834px) {
+    margin-top: 293px;
+  }
+  @media (max-width: 375px) {
+    max-height: 537px;
+    max-width: 343px;
+    margin: 137px 16px;
+    padding: 16px;
+    & &__image-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+    }
+    & &__content {
+      margin-top: 4px;
+      padding: 0px;
+    }
+    & &__name-and-time {
+      margin-top: 10px;
+      gap: 134px;
+      padding-bottom: 29px;
+    }
+    & &__show-info-container {
+      display: flex;
+      align-self: center;
+      gap: 8px;
+    }
+    & &__show-cover-and-info {
+      padding-top: 27px;
+    }
+  }
+}
